@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/sprites/player/Dave.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://scripts/Dave/Dave.gd" type="Script" id=2]
+[ext_resource path="res://scripts/Camera_Pivot.gd" type="Script" id=3]
+[ext_resource path="res://scripts/Grid_Snapper.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16.7665, 31.6205 )
+
+[node name="Dave" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( -0.471939, 0.471931 )
+frames = ExtResource( 1 )
+animation = "dave_walk"
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.892387, 15.5346 )
+shape = SubResource( 1 )
+
+[node name="Camera_Pivot" type="Position2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="Camera_Offset" type="Position2D" parent="Camera_Pivot"]
+position = Vector2( 173.752, 18.0109 )
+
+[node name="Camera" type="Camera2D" parent="Camera_Pivot/Camera_Offset"]
+position = Vector2( 406.994, -245.542 )
+current = true
+limit_left = -600
+smoothing_enabled = true
+drag_margin_left = 1.0
+drag_margin_top = 1.0
+drag_margin_right = 1.0
+drag_margin_bottom = 1.0
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="Grid_Snapper" type="Position2D" parent="."]
+script = ExtResource( 4 )

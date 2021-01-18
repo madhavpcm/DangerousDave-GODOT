@@ -1,0 +1,29 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=2]
+
+[ext_resource path="res://Assets/sprites/player/idle.png" type="Texture" id=1]
+[ext_resource path="res://Assets/sprites/player/walk2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/sprites/player/walk1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/sprites/player/jump.png" type="Texture" id=4]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "dave_jump",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "dave_die",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "dave_idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "dave_walk",
+"speed": 5.0
+} ]
