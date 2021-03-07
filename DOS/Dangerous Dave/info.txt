@@ -1,0 +1,8 @@
+SHIFT+TAB+ENTER - Fullscreen
+SHIFT+TAB+F10   - Quit
+SHIFT+TAB+F1    - Capture/Release mouse
+SHIFT+TAB+F2    - Decrease CPU cycles
+SHIFT+TAB+F3    - Increase CPU cycles
+SHIFT+TAB+F7    - Decrease frame skip
+SHIFT+TAB+F8    - Increase frame skip
+

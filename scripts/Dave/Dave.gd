@@ -19,6 +19,7 @@ func _physics_process(delta):
 		velocity.x = -SPEED
 		$Sprite.play("dave_walk")
 		$Sprite.flip_h = true
+
 	else:
 		$Sprite.play("dave_idle")
 	
@@ -35,3 +36,4 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2.UP )
 	
 	velocity.x = lerp(velocity.x , 0 , 0.5)
+	#print("player side" ,position.x ,position.y)
