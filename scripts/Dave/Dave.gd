@@ -37,3 +37,10 @@ func _physics_process(delta):
 	
 	velocity.x = lerp(velocity.x , 0 , 0.5)
 	#print("player side" ,position.x ,position.y)
+
+
+func _on_Area2D_body_entered(body):
+	#reset position and lives here
+	
+	get_tree().change_scene("res://scenes/Level_2.tscn")
+	pass # Replace with function body.
