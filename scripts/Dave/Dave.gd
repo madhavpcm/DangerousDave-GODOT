@@ -43,4 +43,4 @@ func _on_Area2D_body_entered(body):
 	#reset position and lives here
 	
 	get_tree().change_scene("res://scenes/Level_2.tscn")
-	pass # Replace with function body.
+	 # Replace with function body.

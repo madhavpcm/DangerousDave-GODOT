@@ -1,22 +1,83 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/tilemaps/Level_1.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/Dave.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/Camera2D.gd" type="Script" id=3]
+[ext_resource path="res://Assets/sprites/coins/Diamond.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/sprites/coins/coin.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
 
 [node name="Level_1" type="Node2D"]
 
 [node name="Dave" parent="." instance=ExtResource( 2 )]
 position = Vector2( 164.7, 525.732 )
+collision_mask = 62
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 0.67, 0.67 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 96, 96 )
+collision_layer = 50
 format = 1
 tile_data = PoolIntArray( -1, 1, 0, -65536, 1, 0, -65535, 1, 0, -65534, 1, 0, -65533, 1, 0, -65532, 1, 0, -65531, 1, 0, -65530, 1, 0, -65529, 1, 0, -65528, 1, 0, -65527, 1, 0, -65526, 1, 0, -65525, 1, 0, -65524, 1, 0, -65523, 1, 0, -65522, 1, 0, -65521, 1, 0, -65520, 1, 0, -65519, 1, 0, -65518, 1, 0, -65517, 1, 0, 65535, 1, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 1, 0, 131071, 1, 0, 65536, 0, 0, 65554, 0, 0, 65555, 1, 0, 196607, 1, 0, 131072, 0, 0, 131090, 0, 0, 131091, 1, 0, 262143, 1, 0, 196608, 0, 0, 196611, 0, 0, 196615, 0, 0, 196619, 0, 0, 196623, 0, 0, 196626, 0, 0, 196627, 1, 0, 327679, 1, 0, 262144, 0, 0, 262162, 0, 0, 262163, 1, 0, 393215, 1, 0, 327680, 0, 0, 327681, 0, 0, 327685, 0, 0, 327689, 0, 0, 327693, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 1, 0, 458751, 1, 0, 393216, 0, 0, 393234, 0, 0, 393235, 1, 0, 524287, 1, 0, 458752, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458770, 0, 0, 458771, 1, 0, 589823, 1, 0, 524288, 0, 0, 524289, 3, 0, 524299, 0, 0, 524300, 2, 0, 524306, 0, 0, 524307, 1, 0, 655359, 1, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 1, 0, 720895, 1, 0, 655360, 1, 0, 655361, 1, 0, 655362, 1, 0, 655363, 1, 0, 655364, 1, 0, 655365, 1, 0, 655366, 1, 0, 655367, 1, 0, 655368, 1, 0, 655369, 1, 0, 655370, 1, 0, 655371, 1, 0, 655372, 1, 0, 655373, 1, 0, 655374, 1, 0, 655375, 1, 0, 655376, 1, 0, 655377, 1, 0, 655378, 1, 0, 655379, 1, 0 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 position = Vector2( 640, 304 )
 current = true
 script = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 806, 546 )
+collision_layer = 4
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -3.05176e-05, 3.05176e-05 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="diamond" parent="." instance=ExtResource( 4 )]
+position = Vector2( 225, 158 )
+scale = Vector2( 0.667, 0.667 )
+
+[node name="diamond2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1123, 289 )
+scale = Vector2( 0.667, 0.667 )
+
+[node name="diamond8" parent="." instance=ExtResource( 4 )]
+position = Vector2( 350, 286 )
+scale = Vector2( 0.667, 0.667 )
+
+[node name="diamond9" parent="." instance=ExtResource( 4 )]
+position = Vector2( 740, 160 )
+scale = Vector2( 0.667, 0.667 )
+
+[node name="diamond6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 995, 163 )
+scale = Vector2( 0.667, 0.667 )
+
+[node name="diamond3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 613, 290 )
+scale = Vector2( 0.667, 0.667 )
+
+[node name="diamond4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 482, 159 )
+scale = Vector2( 0.667, 0.667 )
+
+[node name="diamond5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 102, 289 )
+scale = Vector2( 0.667, 0.667 )
+
+[node name="coin" parent="." instance=ExtResource( 5 )]
+position = Vector2( 93, 93 )
+
+[node name="coin2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1133, 88 )
+[connection signal="body_entered" from="Area2D" to="Dave" method="_on_Area2D_body_entered"]

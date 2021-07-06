@@ -61,6 +61,15 @@ down={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="dave"
+2d_physics/layer_2="stage"
+2d_physics/layer_3="deathzone"
+2d_physics/layer_4="items"
+2d_physics/layer_5="npc"
+2d_physics/layer_6="bullet"
+
 [rendering]
 
 quality/driver/driver_name="GLES2"
