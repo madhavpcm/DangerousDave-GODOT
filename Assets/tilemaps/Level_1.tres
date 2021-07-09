@@ -29,7 +29,7 @@ polygon = PoolVector2Array( 96, 96, 0, 96, 0, 0, 96, 0 )
 points = PoolVector2Array( 96, 96, 0, 96, 0, 0, 96, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=8]
-points = PoolVector2Array( 96, 84, 0, 84, 0, 12, 96, 12 )
+points = PoolVector2Array( 96, 72, 0, 72, 0, 0, 96, 0 )
 
 [resource]
 0/name = "red_tile_1.png 0"
@@ -141,14 +141,14 @@ points = PoolVector2Array( 96, 84, 0, 84, 0, 12, 96, 12 )
 4/z_index = 0
 5/name = "purple_tile_1.png 5"
 5/texture = ExtResource( 6 )
-5/tex_offset = Vector2( 0, 0 )
+5/tex_offset = Vector2( 0, 12 )
 5/modulate = Color( 1, 1, 1, 1 )
-5/region = Rect2( 0, 24, 96, 96 )
+5/region = Rect2( 0, 24, 96, 72 )
 5/tile_mode = 0
 5/occluder_offset = Vector2( 0, 0 )
 5/navigation_offset = Vector2( 0, 0 )
-5/shape_offset = Vector2( 0, 0 )
-5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_offset = Vector2( 0, 12 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 12 )
 5/shape = SubResource( 8 )
 5/shape_one_way = false
 5/shape_one_way_margin = 1.0
@@ -157,6 +157,6 @@ points = PoolVector2Array( 96, 84, 0, 84, 0, 12, 96, 12 )
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 8 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 12 )
 } ]
 5/z_index = 0

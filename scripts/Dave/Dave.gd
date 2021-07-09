@@ -4,7 +4,8 @@ var velocity = Vector2(0, 0)
 var look_direction = Vector2(1,0)
 
 const SPEED = 192
-const JUMPTHRUST = -640
+const JUMPTHRUST = -320
+const JUMPSPEED = 320
 const GRAVITY = 27
 
 func _physics_process(delta):
@@ -32,6 +33,10 @@ func _physics_process(delta):
 		
 	if Input.is_action_just_pressed("jump") and is_on_floor() or Input.is_action_just_released("jump") and is_on_floor():
 		velocity.y = JUMPTHRUST
+		if Input.is_action_pressed("right"):
+			velocity.x =JUMPSPEED
+		if Input.is_action_pressed("left"):
+			velocity.x =-JUMPSPEED	
 		
 	velocity = move_and_slide(velocity, Vector2.UP )
 	
