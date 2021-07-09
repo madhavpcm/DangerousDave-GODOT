@@ -1,11 +1,11 @@
 extends Camera2D
 
 export var SCROLL_SPEED = 100
-onready var player = get_node("/root/Level_1/Dave").position
+onready var player = get_parent().get_node("Dave").position 
 var screen_size = Vector2(1280,604)
 var cur_pos=Vector2()
 func _physics_process(delta):
-	player=get_node("/root/Level_1/Dave").position
+	player=get_parent().get_node("Dave").position
 	update_camera()
 
 func _ready():
