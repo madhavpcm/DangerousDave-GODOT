@@ -61,6 +61,8 @@ func _physics_process(delta):
 
 func _on_Area2D_body_entered(body):
 	#reset position and lives here
+	var this_level=  get_tree().get_current_scene().get_name()
 	
-	get_tree().change_scene("res://scenes/Level_2.tscn")
+	print(this_level)
+	get_tree().change_scene("res://scenes/"+this_level+".tscn")
 	 # Replace with function body.
