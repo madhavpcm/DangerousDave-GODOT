@@ -10,7 +10,11 @@ const GRAVITY = 480
 
 func _physics_process(delta):
 	
-	
+	var didjump=false
+	if is_on_floor():
+		didjump=false
+	else:
+		 didjump=true	
 	if Input.is_action_pressed("right"):
 		velocity.x = SPEED
 		look_direction = Vector2(1,0)
@@ -36,18 +40,20 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor() or Input.is_action_just_released("jump") and is_on_floor():
 		now.y = position.y
+		didjump=true
 		velocity.y = -JUMPTHRUST	
 		if Input.is_action_pressed("right"):
 			velocity.x =JUMPSPEED
 		if Input.is_action_pressed("left"):
 			velocity.x =-JUMPSPEED	
-
+	if not is_on_floor() and not didjump:
+		velocity.x =look_direction.x * JUMPSPEED
 		
 			
 	position.y = position.y + velocity.y*delta
 	velocity.y = velocity.y + GRAVITY*delta
 
-		
+
 	
 			
 	if position.y == now.y + 3*64 and not is_on_floor():
